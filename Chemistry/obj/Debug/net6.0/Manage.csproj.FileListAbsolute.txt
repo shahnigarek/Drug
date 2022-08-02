@@ -1,0 +1,15 @@
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\bin\Debug\net6.0\Manage.exe
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\bin\Debug\net6.0\Manage.deps.json
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\bin\Debug\net6.0\Manage.runtimeconfig.json
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\bin\Debug\net6.0\Manage.dll
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\bin\Debug\net6.0\Manage.pdb
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.csproj.AssemblyReference.cache
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.AssemblyInfoInputs.cache
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.AssemblyInfo.cs
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.csproj.CoreCompileInputs.cache
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.dll
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\refint\Manage.dll
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.pdb
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\Manage.genruntimeconfig.cache
+C:\Users\ROG\OneDrive\Рабочий стол\Drug\Chemistry\obj\Debug\net6.0\ref\Manage.dll
