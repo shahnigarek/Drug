@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Manage.Controllers
 {
-    internal class OwnerController
+    public class OwnerController
     {
     }
 }

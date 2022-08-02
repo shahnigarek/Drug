@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Abstarctions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Pharmacy
+    public class Pharmacy: IEntity
     {
         public int ID { get; set; }
         public string Name { get; set; }    
@@ -14,6 +15,6 @@ namespace Core.Entities
         public int ContactNumber { get; set; }
         public Owner Owner { get; set; }    
         public List<Medicine> Medicines { get; set; }
-        public List<Apothecary> Apothecarys { get; set; }
+        public List<Apothecary> Apothecaries { get; set; }
     }
 }

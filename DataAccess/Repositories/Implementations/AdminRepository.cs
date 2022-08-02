@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using DataAccess.Contexts;
+using DataAccess.Repositories.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -110,6 +111,9 @@ namespace DataAccess.Repositories.Implementations
                 }
             }
 
-           
+        void IRepository<Admin>.Create(Admin entity)
+        {
+            throw new NotImplementedException();
         }
+    }
 }
