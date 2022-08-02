@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shahnigarek\\source\\repos\\Manage\\Chemistry\\Manage.csproj": {}
+    "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Chemistry\\Manage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shahnigarek\\source\\repos\\Manage\\Chemistry\\Manage.csproj": {
+    "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Chemistry\\Manage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shahnigarek\\source\\repos\\Manage\\Chemistry\\Manage.csproj",
+        "projectUniqueName": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Chemistry\\Manage.csproj",
         "projectName": "Manage",
-        "projectPath": "C:\\Users\\shahnigarek\\source\\repos\\Manage\\Chemistry\\Manage.csproj",
-        "packagesPath": "C:\\Users\\shahnigarek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahnigarek\\source\\repos\\Manage\\Chemistry\\obj\\",
+        "projectPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Chemistry\\Manage.csproj",
+        "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Chemistry\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shahnigarek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Manage.Controllers
 {
-    internal class Drugstore
+    internal class OwnerController
     {
     }
 }

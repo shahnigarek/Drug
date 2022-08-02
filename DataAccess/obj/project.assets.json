@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\shahnigarek\\.nuget\\packages\\": {}
+    "C:\\Users\\ROG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shahnigarek\\source\\repos\\Manage\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\shahnigarek\\source\\repos\\Manage\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\shahnigarek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shahnigarek\\source\\repos\\Manage\\DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shahnigarek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

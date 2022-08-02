@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.Implementations
 {
-    internal class DrugRepository
+    internal class PharmacyRepository
     {
     }
 }

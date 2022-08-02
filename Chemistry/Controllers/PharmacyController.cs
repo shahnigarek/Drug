@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories.Implementations
+namespace Manage.Controllers
 {
-    internal class DruggistRepository
+    internal class PharmacyController
     {
     }
 }

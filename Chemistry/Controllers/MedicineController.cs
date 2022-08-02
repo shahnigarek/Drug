@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Contexts
+namespace Manage.Controllers
 {
-    static class DbContext
+    internal class MedicineController
     {
     }
 }

@@ -1,1 +1,11 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using System;
+namespace Manage
+{
+    class Program
+    {
+        static void Main()
+        {
+
+        }
+    }
+}

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.Abstarctions
 {
-    internal interface IEntity
+    public interface IEntity
+
     {
     }
 }

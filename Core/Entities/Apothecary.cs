@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public  class Drug
+    public class Apothecary
     {
-        public int   ID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
-        public double Price{ get; set; }
-        public int Count { get; set; }  
+        public string Surname { get; set; }
+        public byte Age { get; set; }   
+        public byte Experience { get; set; }
+
     }
 }

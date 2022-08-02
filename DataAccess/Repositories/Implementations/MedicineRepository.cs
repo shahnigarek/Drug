@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace DataAccess.Repositories.Implementations
 {
-    internal class Druggist
+     public class MedicineRepository
     {
     }
 }
