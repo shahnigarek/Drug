@@ -17,18 +17,14 @@ namespace Manage.Controllers
         {
             _ownerRepository = new OwnerRepository();
         }
+     
         public void CreateOwner()
         {
             ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's name:");
             string name = Console.ReadLine();
             ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's surname");
             string surname = Console.ReadLine();
-           Age: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's age");
-            string age = Console.ReadLine();
-            byte ownerAge;
-            bool result = byte.TryParse(age, out ownerAge);
-            if (result)
-            {
+           
                 Owner owner = new Owner
                 {
 
@@ -37,13 +33,54 @@ namespace Manage.Controllers
                 };
                 var owner1 = _ownerRepository.Create(owner);
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Owner-{owner1.Name},owner's ID-{owner1.ID} with surname-{owner1.Surname}  was successufully created");
-            }
-            else
-            {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
-                goto Age;
-            }
+            
+           
 
         }
+        //public void UpdateOwner()
+        //{
+
+        //    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's ID");
+        //    string ID = Console.ReadLine();
+        //    int Id;
+        //    bool result = int.TryParse(ID, out Id);
+
+        //    var owner1 = _ownerRepository.Get(o => o.ID == Id);
+        //    if (owner1 != null)
+        //    {
+
+        //        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's name:");
+        //        string newname = Console.ReadLine();
+        //        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's surname:");
+        //        string newsurname = Console.ReadLine();
+               
+        //        if (result)
+
+        //        {
+
+        //            var newtutor = new Teacher
+        //            {
+        //                ID = tutorid.ID,
+        //                Name = newname,
+        //                Surname = newsurname,
+        //                Age = age
+        //            };
+        //            _teacherRepository.Update(newtutor);
+        //            ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Name:{tutorid.Name},Surname:{tutorid.Surname},Age:{newtutor.Age} is updated to Name: {newtutor.Name}, Surname: {newtutor.Surname},Age:{newtutor.Age} ");
+        //        }
+        //        else
+        //        {
+        //            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter number");
+        //        }
+        //    }
+
+        //    else
+        //    {
+        //        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please, enter correct ID of teacher");
+        //    }
+
+        //}
+
     }
 }
+
