@@ -51,7 +51,7 @@ namespace Manage
                                     bool result = int.TryParse(number1, out selected);
                                     if (result)
                                     {
-                                        if (selected == 1 && selected < 5)
+                                        if (selected > 0 && selected < 5)
                                         {
                                             switch (selected)
                                             {
@@ -60,17 +60,16 @@ namespace Manage
                                                     _ownerController.CreateOwner();
                                                     break;
 
-                                                    //case (int)Options.UpdateOwner:
-                                                    //    _ownerController.UpdateOwner();
-                                                   
-                                                    //    break;
+                                                case (int)Options.UpdateOwner:
+                                                    _ownerController.UpdateOwner();
+                                                    break;
                                                     //case (int)Options.DeleteOwner:
                                                     //    _ownerController.DeleteOwner();
-                                                   
+
                                                     //    break;
                                                     //case (int)Options.GetAll:
                                                     //    _ownerController.GetAll();
-                                                    
+
                                                     //    break;
                                             }
 
