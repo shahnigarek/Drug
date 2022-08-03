@@ -39,42 +39,47 @@ namespace Manage.Controllers
         }
         public void UpdateOwner()
         {
-            
-            ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's ID");
+            GetAll();
+
+
+           ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's ID");
             string ID = Console.ReadLine();
             int Id;
             bool result = int.TryParse(ID, out Id);
-            if (result)
-            {
-               var ownerid = _ownerRepository.Get(o => o.ID == Id);
-                if(ownerid != null)
-                {
-               
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's name:");
-                    string newname = Console.ReadLine();
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's surname:");
-                    string newsurname = Console.ReadLine();
 
-                    var newOwner = new Owner
+            var ownerid = _ownerRepository.Get(t => t.ID == Id);
+            if (ownerid != null)
+            {
+
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's name:");
+                string newname = Console.ReadLine();
+
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's surname:");
+                string newsurname = Console.ReadLine();
+               
+                    var newtutor = new Owner
                     {
-                        ID=ownerid.ID,
+                        ID = ownerid.ID,
                         Name = newname,
                         Surname = newsurname,
-
+                       
                     };
-                    _ownerRepository.Update(newOwner);
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Owner is updated to Name: {newOwner.Name} and  Surname: {newOwner.Surname}" );
-
-                }
+                    _ownerRepository.Update(newtutor);
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Name and Surname  is successufully updated to Name: {newtutor.Name} and  Surname: {newtutor.Surname} ");
+              
             }
+
             else
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please, enter correct ID of owner");
+                goto ID;
             }
+
 
         }
         public void DeleteOwner()
         {
+            GetAll();
             ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the owner you want to delete ");
             string ID = Console.ReadLine();
             int Id;

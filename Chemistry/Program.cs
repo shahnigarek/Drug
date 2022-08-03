@@ -67,10 +67,10 @@ namespace Manage
                                                     _ownerController.DeleteOwner();
                                                     break;
 
-                                                    //case (int)Options.GetAll:
-                                                    //    _ownerController.GetAll();
+                                                case (int)Options.GetAll:
+                                                    _ownerController.GetAll();
+                                                    break;
 
-                                                    //    break;
                                             }
 
                                         }
