@@ -110,30 +110,29 @@ namespace Manage
                                             switch (selectedOption)
                                             {
 
-                                                //case (int)Options1.CreatePharmacy:
-                                                //    _pharmacyController.CreatePharmacy();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options1.UpdatePharmacy:
-                                                //    _pharmacyController.UpdatePharmacy();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options1.DeletePharmacy:
-                                                //    _pharmacyController.DeletePharmacy();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options1.GetAll:
-                                                //    _pharmacyController.GetAll();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options1.GetAllPharmaciesbyOwner:
-                                                //    _pharmacyController.GetAllPharmaciesbyOwner();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options1.Sale:
-                                                //    _pharmacyController.Sale();
-                                                //    goto Logout;
-                                                //    break;
+                                                case (int)Options1.CreatePharmacy:
+                                                    _pharmacyController.CreatePharmacy();
+                                                    break;
+                                                    //case (int)Options1.UpdatePharmacy:
+                                                    //    _pharmacyController.UpdatePharmacy();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options1.DeletePharmacy:
+                                                    //    _pharmacyController.DeletePharmacy();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options1.GetAll:
+                                                    //    _pharmacyController.GetAll();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options1.GetAllPharmaciesbyOwner:
+                                                    //    _pharmacyController.GetAllPharmaciesbyOwner();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options1.Sale:
+                                                    //    _pharmacyController.Sale();
+                                                    //    goto Logout;
+                                                    //    break;
 
                                             }
                                         }
