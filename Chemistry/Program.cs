@@ -20,12 +20,12 @@ namespace Manage
         // PharmacyController _pharmacyController = new PharmacyController();
         // PharmacyRepository _pharmacyRepository = new PharmacyRepository();
 
-        Authentication: var admin = _adminController.Autenticate();
+        Logout: var admin = _adminController.Autenticate();
 
 
             if (admin != null)
             {
-            Logout: ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Welcome , {admin.UserName}");
+             ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Welcome , {admin.UserName}");
                 Console.WriteLine();
                 Console.WriteLine("Please enter 1 if you want to see Owners,2 if you want to see Pharmacy,3 to see Apothecary,4 to see Medicine or LogOut ");
                 string number = Console.ReadLine();
@@ -56,35 +56,34 @@ namespace Manage
                                             switch (selected)
                                             {
 
-                                                case (int)Options.CreateOwner:
-                                                    _ownerController.CreateOwner();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options.CreateOwner:
+                                                //    _ownerController.CreateOwner();
+                                                //    goto Logout;
+                                                //    break;
 
-                                                case (int)Options.UpdateOwner:
-                                                    _ownerController.UpdateOwner();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options.DeleteOwner:
-                                                    _ownerController.DeleteOwner();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options.GetAll:
-                                                    _ownerController.GetAll();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options.UpdateOwner:
+                                                //    _ownerController.UpdateOwner();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options.DeleteOwner:
+                                                //    _ownerController.DeleteOwner();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options.GetAll:
+                                                //    _ownerController.GetAll();
+                                                //    goto Logout;
+                                                //    break;
                                             }
 
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Please enter correct number");
-                                            goto Logout;
+                                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter correct number!!");
                                         }
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Please enter correct number");
+                                      
                                         goto Logout;
                                     }
                                 }
@@ -113,42 +112,42 @@ namespace Manage
                                             switch (selectedOption)
                                             {
 
-                                                case (int)Options1.CreatePharmacy:
-                                                    _pharmacyController.CreatePharmacy();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options1.UpdatePharmacy:
-                                                    _pharmacyController.UpdatePharmacy();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options1.DeletePharmacy:
-                                                    _pharmacyController.DeletePharmacy();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options1.GetAll:
-                                                    _pharmacyController.GetAll();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options1.GetAllPharmaciesbyOwner:
-                                                    _pharmacyController.GetAllPharmaciesbyOwner();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options1.Sale:
-                                                    _pharmacyController.Sale();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options1.CreatePharmacy:
+                                                //    _pharmacyController.CreatePharmacy();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options1.UpdatePharmacy:
+                                                //    _pharmacyController.UpdatePharmacy();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options1.DeletePharmacy:
+                                                //    _pharmacyController.DeletePharmacy();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options1.GetAll:
+                                                //    _pharmacyController.GetAll();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options1.GetAllPharmaciesbyOwner:
+                                                //    _pharmacyController.GetAllPharmaciesbyOwner();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options1.Sale:
+                                                //    _pharmacyController.Sale();
+                                                //    goto Logout;
+                                                //    break;
 
                                             }
                                         }
                                         else
                                         {
                                             ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter correct number!!");
-                                            goto Logout;
+                                            
                                         }
                                     }
                                     else
                                     {
-                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                                      
                                         goto Logout;
                                     }
                                 }
@@ -159,12 +158,12 @@ namespace Manage
                                 ApothecaryController _apothecaryController = new ApothecaryController();
                                 while (true)
                                 {
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkYellow, "Select one of the options");
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "1-Create Apothecary");
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "2-Update Apothecary");
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "3-Delete Apothecary");
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "4-GetAll");
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "5-Get All Apothecary By Pharmacy");
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Select one of the options");
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "1-Create Apothecary");
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "2-Update Apothecary");
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "3-Delete Apothecary");
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "4-GetAll");
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "5-Get All Apothecary By Pharmacy");
 
                                     string number1 = Console.ReadLine();
                                     int selected;
@@ -176,38 +175,38 @@ namespace Manage
                                             switch (selected)
                                             {
 
-                                                case (int)Options2.CreateApothecary:
-                                                    _apothecaryController.CreateApothecary();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options2.CreateApothecary:
+                                                //    _apothecaryController.CreateApothecary();
+                                                //    goto Logout;
+                                                //    break;
 
-                                                case (int)Options2.UpdateApothecary:
-                                                    _apothecaryController.UpdateApothecary();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.DeleteApothecary:
-                                                    _apothecaryController.DeleteApothecary();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.GetAll:
-                                                    _apothecaryController.GetALL();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.GetAllDruggistByDrugstore:
-                                                    _apothecaryController.GetAllApothecaryByPharmacy();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options2.UpdateApothecary:
+                                                //    _apothecaryController.UpdateApothecary();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.DeleteApothecary:
+                                                //    _apothecaryController.DeleteApothecary();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.GetAll:
+                                                //    _apothecaryController.GetALL();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.GetAllDruggistByDrugstore:
+                                                //    _apothecaryController.GetAllApothecaryByPharmacy();
+                                                //    goto Logout;
+                                                //    break;
                                             }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Please enter correct number");
+                                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter correct number!!");
 
                                         }
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Please enter correct number");
+                                        goto Logout;
                                     }
 
                                 }
@@ -237,43 +236,42 @@ namespace Manage
                                             switch (selected)
                                             {
 
-                                                case (int)Options2.CreateApothecary:
-                                                    _medicineController.CreateApothecary();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options2.CreateApothecary:
+                                                //    _medicineController.CreateApothecary();
+                                                //    goto Logout;
+                                                //    break;
 
-                                                case (int)Options2.UpdateApothecary:
-                                                    _medicineController.UpdateApothecary();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.DeleteApothecary:
-                                                    _medicineController.DeleteApothecary();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.GetAll:
-                                                    _medicineController.GetALL();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.GetAllApothecaryByPharmacy:
-                                                    _medicineController.GetAllApothecaryByPharmacy();
-                                                    goto Logout;
-                                                    break;
-                                                case (int)Options2.Filter:
-                                                    _medicineController.Filter();
-                                                    goto Logout;
-                                                    break;
+                                                //case (int)Options2.UpdateApothecary:
+                                                //    _medicineController.UpdateApothecary();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.DeleteApothecary:
+                                                //    _medicineController.DeleteApothecary();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.GetAll:
+                                                //    _medicineController.GetALL();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.GetAllApothecaryByPharmacy:
+                                                //    _medicineController.GetAllApothecaryByPharmacy();
+                                                //    goto Logout;
+                                                //    break;
+                                                //case (int)Options2.Filter:
+                                                //    _medicineController.Filter();
+                                                //    goto Logout;
+                                                //    break;
 
                                             }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Please enter correct number");
-                                            goto Logout;
+                                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter correct number!!");
                                         }
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Please enter correct number");
+                                       
                                         goto Logout;
                                     }
 
@@ -284,7 +282,7 @@ namespace Manage
 
                             }
                         }
-                        
+
                     }
                     catch
                     {
@@ -295,7 +293,7 @@ namespace Manage
             else
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Password or username were entered false,please try again");
-                goto Authentication;
+                goto Logout;
             }
 
         }
@@ -306,4 +304,4 @@ namespace Manage
 
 
 
-         
+

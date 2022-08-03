@@ -18,12 +18,12 @@ namespace DataAccess.Contexts
             Owners= new List<Owner>();
             Admins = new List<Admin>();
 
-            string password = "academyapp";
+            string password = "drug";
             var hashedPassword = PasswordHasher.Encrypt(password);
             Admin admin1 = new Admin("admin1", hashedPassword);
             Admins.Add(admin1);
 
-            string password1 = "chaand";
+            string password1 = "moon";
             var hashedPassword1 = PasswordHasher.Encrypt(password1);
             Admin admin2 = new Admin("admin2", hashedPassword1);
             Admins.Add(admin2);
