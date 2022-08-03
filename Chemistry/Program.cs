@@ -63,10 +63,10 @@ namespace Manage
                                                 case (int)Options.UpdateOwner:
                                                     _ownerController.UpdateOwner();
                                                     break;
-                                                    //case (int)Options.DeleteOwner:
-                                                    //    _ownerController.DeleteOwner();
+                                                case (int)Options.DeleteOwner:
+                                                    _ownerController.DeleteOwner();
+                                                    break;
 
-                                                    //    break;
                                                     //case (int)Options.GetAll:
                                                     //    _ownerController.GetAll();
 

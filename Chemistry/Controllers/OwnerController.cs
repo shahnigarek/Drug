@@ -46,8 +46,8 @@ namespace Manage.Controllers
             bool result = int.TryParse(ID, out Id);
             if (result)
             {
-               var owner = _ownerRepository.Get(o => o.ID == Id);
-                if(owner != null)
+               var ownerid = _ownerRepository.Get(o => o.ID == Id);
+                if(ownerid != null)
                 {
                
                     ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's name:");
@@ -57,7 +57,7 @@ namespace Manage.Controllers
 
                     var newOwner = new Owner
                     {
-                        ID=owner.ID,
+                        ID=ownerid.ID,
                         Name = newname,
                         Surname = newsurname,
 
@@ -72,6 +72,29 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please, enter correct ID of owner");
             }
 
+        }
+        public void DeleteOwner()
+        {
+            ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the owner you want to delete ");
+            string ID = Console.ReadLine();
+            int Id;
+
+            bool result = int.TryParse(ID, out Id);
+
+            var owner = _ownerRepository.Get(o => o.ID == Id);
+
+            if (owner != null)
+            {
+                _ownerRepository.Delete(owner);
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Teacher with ID:{owner.ID} is deleted");
+
+
+
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Owner with this ID  doesn't exist");
+            }
         }
     }
 }
