@@ -96,6 +96,24 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Owner with this ID  doesn't exist");
             }
         }
+        public void GetAll()
+        {
+           var owners= _ownerRepository.GetAll();
+          
+            if (owners.Count > 0)
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "All owners list");
+
+                foreach (var owner in owners)
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {owner.ID}, Fullname - {owner.Name} {owner.Surname}");
+                }
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner,please create it ");
+            }
+        }
     }
 }
             
