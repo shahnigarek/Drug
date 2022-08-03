@@ -10,15 +10,15 @@ namespace Manage
         static void Main()
         {
             AdminController _adminController = new AdminController();
-        // AdminRepository _adminRepository = new AdminRepository();
-        // ApothecaryController _apothecaryController = new ApothecaryController();
-        // ApothecaryRepository _apothecaryRepository = new ApothecaryRepository();
-        // MedicineController _medicineController = new MedicineController();
-        // MedicineRepository _medicineRepository = new MedicineRepository();
-        /// OwnerController _ownerController = new OwnerController();
-        // OwnerRepository _ownerRepository = new OwnerRepository();
-        // PharmacyController _pharmacyController = new PharmacyController();
-        // PharmacyRepository _pharmacyRepository = new PharmacyRepository();
+            AdminRepository _adminRepository = new AdminRepository();
+            //ApothecaryController _apothecaryController = new ApothecaryController();
+            ApothecaryRepository _apothecaryRepository = new ApothecaryRepository();
+            //MedicineController _medicineController = new MedicineController();
+            MedicineRepository _medicineRepository = new MedicineRepository();
+            //OwnerController _ownerController = new OwnerController();
+            OwnerRepository _ownerRepository = new OwnerRepository();
+            //PharmacyController _pharmacyController = new PharmacyController();
+            PharmacyRepository _pharmacyRepository = new PharmacyRepository();
 
         Logout: var admin = _adminController.Autenticate();
 
@@ -51,28 +51,27 @@ namespace Manage
                                     bool result = int.TryParse(number1, out selected);
                                     if (result)
                                     {
-                                        if (selected > 0 && selected < 5)
+                                        if (selected == 1 && selected < 5)
                                         {
                                             switch (selected)
                                             {
 
-                                                //case (int)Options.CreateOwner:
-                                                //    _ownerController.CreateOwner();
-                                                //    goto Logout;
-                                                //    break;
+                                                case (int)Options.CreateOwner:
+                                                    _ownerController.CreateOwner();
+                                                    break;
 
-                                                //case (int)Options.UpdateOwner:
-                                                //    _ownerController.UpdateOwner();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options.DeleteOwner:
-                                                //    _ownerController.DeleteOwner();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options.GetAll:
-                                                //    _ownerController.GetAll();
-                                                //    goto Logout;
-                                                //    break;
+                                                    //case (int)Options.UpdateOwner:
+                                                    //    _ownerController.UpdateOwner();
+                                                   
+                                                    //    break;
+                                                    //case (int)Options.DeleteOwner:
+                                                    //    _ownerController.DeleteOwner();
+                                                   
+                                                    //    break;
+                                                    //case (int)Options.GetAll:
+                                                    //    _ownerController.GetAll();
+                                                    
+                                                    //    break;
                                             }
 
                                         }

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Manage.Controllers
 {
-   
     
         public class AdminController
         {
@@ -33,4 +32,5 @@ namespace Manage.Controllers
             }
         }
     
+   
 }
