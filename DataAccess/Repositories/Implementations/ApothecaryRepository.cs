@@ -104,6 +104,7 @@ namespace DataAccess.Repositories.Implementations
                     apothecary.Name = entity.Name;
                     apothecary.Age = entity.Age;
                     apothecary.Experience = entity.Experience;
+                    apothecary.Pharmacy = entity.Pharmacy;
                     
                 }
 
