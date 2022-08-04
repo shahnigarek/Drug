@@ -19,6 +19,7 @@ namespace Manage
             OwnerRepository _ownerRepository = new OwnerRepository();
             //PharmacyController _pharmacyController = new PharmacyController();
             PharmacyRepository _pharmacyRepository = new PharmacyRepository();
+            
 
         Logout: var admin = _adminController.Autenticate();
 
@@ -88,6 +89,7 @@ namespace Manage
                             }
                             else if (number == "2")
                             {
+                               
                                 PharmacyController _pharmacyController = new PharmacyController();
                                 while (true)
                                 {
@@ -113,10 +115,9 @@ namespace Manage
                                                 case (int)Options1.CreatePharmacy:
                                                     _pharmacyController.CreatePharmacy();
                                                     break;
-                                                    //case (int)Options1.UpdatePharmacy:
-                                                    //    _pharmacyController.UpdatePharmacy();
-                                                    //    goto Logout;
-                                                    //    break;
+                                                case (int)Options1.UpdatePharmacy:
+                                                    _pharmacyController.UpdatePharmacy();
+                                                    break;
                                                     //case (int)Options1.DeletePharmacy:
                                                     //    _pharmacyController.DeletePharmacy();
                                                     //    goto Logout;
