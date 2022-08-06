@@ -68,6 +68,7 @@ namespace Manage.Controllers
 
 
                         _pharmacyRepository.Create(pharmacy);
+                        owner.Pharmacies.Add(pharmacy);
                         ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{pharmacy.ID},Name;{pharmacy.Name},Address:{pharmacy.Address} and phramcy's owner:{owner.Name}");
 
 
