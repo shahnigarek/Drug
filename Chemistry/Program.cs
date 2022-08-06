@@ -198,7 +198,7 @@ namespace Manage
                                                 break;
                                             //case (int)Options2.GetAllApothecaryByPharamcy:
                                             //    _apothecaryController.GetAllApothecaryByPharmacy();
-                                            //   break;
+                                            //    break;
                                             case (int)Options2.Exit:
                                                 goto Initial;
                                                 break;
@@ -256,13 +256,11 @@ namespace Manage
                                             case (int)Options3.GetAll:
                                                 _medicineController.GetAll();
                                                 break;
-                                            //case (int)Options2.GetAllApothecaryByPharmacy:
-                                            //    _medicineController.GetAllApothecaryByPharmacy();
-                                            //    goto Logout;
-                                            //    break;
-                                            //case (int)Options2.Filter:
+                                            case (int)Options3.GetAllMediciniesByPharmacy:
+                                                _medicineController.GetAllMediciniesByPharmacy();
+                                                break;
+                                            //case (int)Options3.Filter:
                                             //    _medicineController.Filter();
-                                            //    goto Logout;
                                             //    break;
                                             case (int)Options3.Exit:
                                                 goto Initial;

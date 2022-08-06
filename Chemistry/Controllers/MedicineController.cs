@@ -268,73 +268,56 @@ namespace Manage.Controllers
         }
         public void GetAllMediciniesByPharmacy()
         {
-            var medicines = _medicineRepository.GetAll();
-            if (medicines.Count > 0)
+
+            var pharmacies = _pharmacyRepository.GetAll();
+            if (pharmacies.Count > 0)
             {
-                var pharmacies = _pharmacyRepository.GetAll();
-                if (pharmacies.Count > 0)
+            All: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Pharmacy's list");
+                foreach (var pharmacy in pharmacies)
                 {
-                ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Please enter pharmacy's id to print it medicines");
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Pharmacy's list");
-                    foreach (var pharmacy in pharmacies)
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"ID:{pharmacy.ID},Name:{pharmacy.Name},Address:{pharmacy.Address},ContactNumber:{pharmacy.ContactNumber}");
+                }
+
+            ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Please enter pharmacy's id to print it medicines");
+                string pharmacyid = Console.ReadLine();
+                int Id;
+                bool result = int.TryParse(pharmacyid, out Id);
+                if (result)
+                {
+                    var pharmacy = _pharmacyRepository.Get(p => p.ID == Id);
+                    if (pharmacy != null)
                     {
-                        ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"ID:{pharmacy.ID},Name:{pharmacy.Name},Address:{pharmacy.Address},ContactNumber:{pharmacy.ContactNumber}");
-                        string id = Console.ReadLine();
-                        if (id != null)
+                        var medicines = _medicineRepository.GetAll(m => m.Pharmacy != null ? m.Pharmacy.ID == pharmacy.ID : false);
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All medicines exist in Pharmacy: {pharmacy.Name} Address: {pharmacy.Address} ContactNumber:{pharmacy.ContactNumber}");
+                        foreach (var medicine in medicines)
                         {
-                            int Id;
-                            bool result = int.TryParse(id, out Id);
-                            if (result)
-                            {
-                                var pharmacyy = _pharmacyRepository.Get(p => p.ID == Id);
-                                if (pharmacyy != null)
-                                {
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All medicines exist in Pharmacy: {pharmacy.Name} Address: {pharmacy.Address} ContactNumber:{pharmacy.ContactNumber}");
-                                    if (pharmacy.Medicines.Count > 0)
-                                    {
-                                        foreach (var medicinepharmacy in pharmacy.Medicines)
-                                        {
-                                            ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"Medicine's ID:{medicinepharmacy.ID},Name:{medicinepharmacy.Name},Price:{medicinepharmacy.Price},Count:{medicinepharmacy.Count}");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, $"There is no medicine belonged to pharmacy {pharmacy.Name} {pharmacy.ID}");
-                                    }
-                                }
-                                else
-                                {
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy with this id");
-                                }
-                            }
-                            else
-                            {
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter number");
-                                goto ID;
-                            }
-
-
-
-                        }
-                        else
-                        {
-                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
-
+                            ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"Medicine's ID:{medicine.ID},Name:{medicine.Name},Price:{medicine.Price},Count:{medicine.Count}");
                         }
 
+                    }
+                    else
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine like that");
+                        goto All;
                     }
                 }
                 else
                 {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy please create it");
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter number");
+                    goto ID;
                 }
+
+
+
             }
             else
             {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy please create it");
             }
+           
         }
     }
+
 }
 
 

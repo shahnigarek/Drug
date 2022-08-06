@@ -414,15 +414,15 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy please create it");
             }
         }
-
-
-
-
-
-
-
-
     }
+
+
+
+
+
+
+
+
 }
 
 

@@ -42,7 +42,7 @@ namespace Core.Constants
         UpdateMedicine,
         DeleteMedicine,
         GetAll,
-        GetAllMedicineByPharmacy,
+        GetAllMediciniesByPharmacy,
         Filter,
         Exit
 
