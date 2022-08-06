@@ -231,13 +231,13 @@ namespace Manage
                                                     _medicineController.CreateMedicine();
                                                     break;
 
-                                                    //case (int)Options3.UpdateMedicine:
-                                                    //    _medicineController.UpdateMedicine();
-                                                    //    break;
-                                                    //case (int)Options3.DeleteMedicine:
-                                                    //    _medicineController.DeleteMedicine();
+                                                case (int)Options3.UpdateMedicine:
+                                                    _medicineController.UpdateMedicine();
+                                                    break;
+                                                //case (int)Options3.DeleteMedicine:
+                                                //    _medicineController.DeleteMedicine();
 
-                                                    //break;
+                                                //break;
                                                 case (int)Options3.GetAll:
                                                     _medicineController.GetAll();
 

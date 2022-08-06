@@ -120,7 +120,99 @@ namespace Manage.Controllers
         }
         public void UpdateMedicine()
         {
+            GetAll();
+        ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine's ID");
+            string ID = Console.ReadLine();
+            int Id;
+            bool result = int.TryParse(ID, out Id);
+            if (result)
+            {
+                var medicine = _medicineRepository.Get(m => m.ID == Id);
+                if (medicine != null)
+                {
 
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new medicine name:");
+                    string newname = Console.ReadLine();
+                Price: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine price:");
+                    string price = Console.ReadLine();
+                    double pricemedicine;
+                    result = double.TryParse(price, out pricemedicine);
+                    if (result)
+                    {
+                    Count: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine count:");
+                        string count = Console.ReadLine();
+                        int countmedicine;
+                        result = int.TryParse(count, out countmedicine);
+                        if (result)
+                        {
+                            if (countmedicine > 0)
+                            {
+                            Pharmacy: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new pharmacy's id");
+                                string newpharmacy = Console.ReadLine();
+                                int pharmacyid;
+                                result = int.TryParse(newpharmacy, out pharmacyid);
+                                if (result)
+                                {
+                                    var newPharmacy = _pharmacyRepository.Get(p => p.ID == pharmacyid);
+                                    if (newPharmacy != null)
+                                    {
+                                        var newmedicine = new Medicine
+                                        {
+                                            ID = pharmacyid,
+                                            Name = newname,
+                                            Price = pricemedicine,
+                                            Count = countmedicine
+
+
+                                        };
+                                        _medicineRepository.Update(newmedicine);
+                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {newmedicine.ID},Name - {newname},Price-{pricemedicine},Count-{countmedicine}");
+
+                                    }
+                                    else
+                                    {
+                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "This  pharmacy doesn't exist");
+                                        goto Pharmacy;
+                                    }
+                                }
+                                else
+                                {
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right medicine's ID");
+                                    goto Pharmacy;
+                                }
+
+
+                            }
+                            else
+                            {
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right ID");
+                                goto Count;
+                            }
+                        }
+                        else
+                        {
+                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                            goto Count;
+                        }
+
+                    }
+                    else
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                        goto Price;
+                    }
+                }
+                else
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine please create it");
+                }
+
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                goto ID;
+            }
         }
         public void GetAll()
         {
@@ -142,8 +234,8 @@ namespace Manage.Controllers
             }
         }
     }
-
 }
+
 
 
 
