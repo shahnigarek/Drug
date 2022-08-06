@@ -284,21 +284,21 @@ namespace Manage.Controllers
             }
 
         }
-        public void Sale()
-        {
-            var pharmacies = _pharmacyRepository.GetAll();
-            if (pharmacies.Count > 0)
-            {
-                var medicines = _medicineRepository.GetAll();
-                if(medicines.Count > 0)
-                {
-                    foreach(var medicine in medicines)
-                    {
-                        ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, $"Drug id");
-                    }
-                }
-            }
-        }
+        //public void Sale()
+        //{
+        //    var pharmacies = _pharmacyRepository.GetAll();
+        //    if (pharmacies.Count > 0)
+        //    {
+        //        var medicines = _medicineRepository.GetAll();
+        //        if(medicines.Count > 0)
+        //        {
+        //            foreach(var medicine in medicines)
+        //            {
+        //                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, $"Drug id");
+        //            }
+        //        }
+        //    }
+        //}
 
 
 

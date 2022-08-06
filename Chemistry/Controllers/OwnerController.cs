@@ -47,8 +47,8 @@ namespace Manage.Controllers
             int Id;
             bool result = int.TryParse(ID, out Id);
 
-            var ownerid = _ownerRepository.Get(t => t.ID == Id);
-            if (ownerid != null)
+            var owner = _ownerRepository.Get(t => t.ID == Id);
+            if (owner != null)
             {
 
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's name:");
@@ -59,7 +59,7 @@ namespace Manage.Controllers
                
                     var newtutor = new Owner
                     {
-                        ID = ownerid.ID,
+                        ID = owner.ID,
                         Name = newname,
                         Surname = newsurname,
                        

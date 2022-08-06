@@ -101,8 +101,65 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy please create it");
             }
         }
+        public void UpdateApothecary()
+        {
+        ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's ID");
+            string ID = Console.ReadLine();
+            int Id;
+            bool result = int.TryParse(ID, out Id);
+            if (result)
+            {
+                var apothecary = _apothecaryRepository.Get(t => t.ID == Id);
+                if (apothecary != null)
+                {
+
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new apothecary's name:");
+                    string newname = Console.ReadLine();
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new apothecary's surname:");
+                    string newsurname = Console.ReadLine();
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new apothecary's age");
+                    string age = Console.ReadLine();
+                    byte newage;
+                    result = byte.TryParse(age, out newage);
+                    if (result)
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's experience");
+                        string experience = Console.ReadLine();
+                        byte newexperience;
+                        result = byte.TryParse(experience, out newexperience);
+                        if (result)
+                        {
+                            if (newexperience > 0 && newexperience <= newage)
+                            {
+                                var newapothecary = new Apothecary
+                                {
+                                    ID = apothecary.ID,
+                                    Name = newname,
+                                    Surname = newsurname,
+                                    Age = newage,
+                                    Experience = newexperience
+
+                                };
+                                _apothecaryRepository.Update(newapothecary);
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Name,Surname,Age,Experience  is successufully updated to Name: {newapothecary.Name} Surname: {newapothecary.Surname} Age:{apothecary.Age} Experience :{apothecary.Experience} ");
+
+                            }
+
+                            else
+                            {
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please, enter correct ID of apothecary");
+                                goto ID;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
     }
 }
+
 
 
 
