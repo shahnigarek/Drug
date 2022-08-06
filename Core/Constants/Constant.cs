@@ -30,6 +30,16 @@ namespace Core.Constants
         DeleteApothecary,
         GetAll,
         GetAllApothecaryByPharmacy,
+       
+
+    }
+    public enum Options3
+    {
+        CreateMedicine=1,
+        UpdateMedicine,
+        DeleteMedicine,
+        GetAll,
+        GetAllMedicineByPharmacy,
         Filter
 
     }

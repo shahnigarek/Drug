@@ -201,6 +201,7 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no apothecary,please create it ");
             }
         }
+        
     }
 }
 

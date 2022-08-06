@@ -227,31 +227,29 @@ namespace Manage
                                             switch (selected)
                                             {
 
-                                                //case (int)Options2.CreateApothecary:
-                                                //    _medicineController.CreateApothecary();
-                                                //    goto Logout;
-                                                //    break;
+                                                case (int)Options3.CreateMedicine:
+                                                    _medicineController.CreateMedicine();
+                                                    break;
 
-                                                //case (int)Options2.UpdateApothecary:
-                                                //    _medicineController.UpdateApothecary();
-                                                //    goto Logout;
+                                                //case (int)Options3.UpdateMedicine:
+                                                //    _medicineController.UpdateMedicine();
                                                 //    break;
-                                                //case (int)Options2.DeleteApothecary:
-                                                //    _medicineController.DeleteApothecary();
-                                                //    goto Logout;
+                                                //case (int)Options3.DeleteMedicine:
+                                                //    _medicineController.DeleteMedicine();
+                                                   
                                                 //    break;
-                                                //case (int)Options2.GetAll:
-                                                //    _medicineController.GetALL();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options2.GetAllApothecaryByPharmacy:
-                                                //    _medicineController.GetAllApothecaryByPharmacy();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options2.Filter:
-                                                //    _medicineController.Filter();
-                                                //    goto Logout;
-                                                //    break;
+                                                //case (int)Options3.GetAll:
+                                                //    _medicineController.GetAll();
+                                                   
+                                                    break;
+                                                    //case (int)Options2.GetAllApothecaryByPharmacy:
+                                                    //    _medicineController.GetAllApothecaryByPharmacy();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options2.Filter:
+                                                    //    _medicineController.Filter();
+                                                    //    goto Logout;
+                                                    //    break;
 
                                             }
                                         }
