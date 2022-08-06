@@ -9,28 +9,32 @@ using System.Threading.Tasks;
 
 namespace Manage.Controllers
 {
-    
-        public class AdminController
+
+    public class AdminController
+    {
+        private AdminRepository _adminRepository;
+        public AdminController()
         {
-            private AdminRepository _adminRepository;
-            public AdminController()
-            {
-                _adminRepository = new AdminRepository();
+            _adminRepository = new AdminRepository();
 
-            }
-            public Admin Autenticate()
-            {
-            AdminAuthentication: ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Please enter username");
-                string username = Console.ReadLine();
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Please enter password");
-                string password = Console.ReadLine();
-
-                var admin = _adminRepository.Get(a => a.UserName.ToLower() == username.ToLower() && PasswordHasher.Decrypt(a.Password) == password);
-
-                return admin;
-
-            }
         }
-    
-   
+        public Admin Autenticate()
+        {
+        AdminAuthentication: ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Please enter username");
+            string username = Console.ReadLine();
+            ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "Please enter password");
+            string password = Console.ReadLine();
+
+            var admin = _adminRepository.Get(a => a.UserName.ToLower() == username.ToLower() && PasswordHasher.Decrypt(a.Password) == password);
+
+            return admin;
+
+        }
+        public Admin Logout()
+        {
+            return Autenticate();
+        }
+    }
+
+
 }

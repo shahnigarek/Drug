@@ -11,7 +11,8 @@ namespace Core.Constants
         CreateOwner=1,
         UpdateOwner,
         DeleteOwner,
-        GetAll
+        GetAll,
+        Exit
 
     }
     public enum Options1
@@ -21,7 +22,8 @@ namespace Core.Constants
         DeletePharmacy,
         GetAll,
         GetAllPharmaciesbyOwner,
-        Sale
+        Sale,
+        Exit
     }
     public enum Options2
     {
@@ -30,6 +32,7 @@ namespace Core.Constants
         DeleteApothecary,
         GetAll,
         GetAllApothecaryByPharmacy,
+        Exit
        
 
     }
@@ -40,7 +43,8 @@ namespace Core.Constants
         DeleteMedicine,
         GetAll,
         GetAllMedicineByPharmacy,
-        Filter
+        Filter,
+        Exit
 
     }
 }

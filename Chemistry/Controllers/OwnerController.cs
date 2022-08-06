@@ -120,6 +120,7 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner,please create it ");
             }
         }
+     
     }
 }
             

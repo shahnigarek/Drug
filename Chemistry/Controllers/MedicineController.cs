@@ -266,6 +266,74 @@ namespace Manage.Controllers
                 goto ID;
             }
         }
+        //public void GetAllMediciniesByPharmacy()
+        //{
+        //    var medicines= _medicineRepository.GetAll();
+        //    if (medicines.Count > 0)
+        //    {
+        //        var pharmacies = _pharmacyRepository.GetAll();
+        //        if (pharmacies.Count > 0)
+        //        {
+        //        ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Please enter pharmacy's id to print it medicines");
+        //            ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Pharmacy's list");
+        //            foreach (var pharmacy in pharmacies)
+        //            {
+        //                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"ID:{pharmacy.ID},Name:{owner.Name},Surname:{owner.Surname}");
+        //                string id = Console.ReadLine();
+        //                if (id != null)
+        //                {
+        //                    int Id;
+        //                    bool result = int.TryParse(id, out Id);
+        //                    if (result)
+        //                    {
+        //                        var ownerr = _ownerRepository.Get(o => o.ID == Id);
+        //                        if (ownerr != null)
+        //                        {
+        //                            ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All pharmacies owned by {owner.Name} {owner.Surname}");
+        //                            if (owner.Pharmacies.Count > 0)
+        //                            {
+        //                                foreach (var ownerpharmacy in owner.Pharmacies)
+        //                                {
+        //                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"Pharamcy's ID:{ownerpharmacy.ID},Name:{ownerpharmacy.Name},Address:{ownerpharmacy.Address},ContactNumber:{ownerpharmacy.ContactNumber}");
+        //                                }
+        //                            }
+        //                            else
+        //                            {
+        //                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, $"There is no pharmacy belonged to owner {owner.Name} {owner.Surname}");
+        //                            }
+        //                        }
+        //                        else
+        //                        {
+        //                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner with this id");
+        //                        }
+        //                    }
+        //                    else
+        //                    {
+        //                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter number");
+        //                        goto ID;
+        //                    }
+
+
+
+        //                }
+        //                else
+        //                {
+        //                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter riht number");
+
+        //                }
+
+        //            }
+        //        }
+        //        else
+        //        {
+        //            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner please create it");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy");
+        //    }
+        //}
     }
 }
 
