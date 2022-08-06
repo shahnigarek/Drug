@@ -233,6 +233,39 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine,please create it ");
             }
         }
+        public void DeleteMedicine()
+        {
+            GetAll();
+        ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the medicine you want to delete ");
+            string ID = Console.ReadLine();
+            int Id;
+
+            bool result = int.TryParse(ID, out Id);
+            if (result)
+            {
+                var medicine = _medicineRepository.Get(m => m.ID == Id);
+
+                if (medicine != null)
+                {
+                    _medicineRepository.Delete(medicine);
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Pharmacy with ID:{medicine.ID} is deleted");
+
+
+
+                }
+                else
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Medicine with this ID  doesn't exist");
+                    goto ID;
+                }
+
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                goto ID;
+            }
+        }
     }
 }
 
