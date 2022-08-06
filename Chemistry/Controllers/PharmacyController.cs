@@ -13,11 +13,13 @@ namespace Manage.Controllers
     {
         private OwnerRepository _ownerRepository;
         private PharmacyRepository _pharmacyRepository;
+        private MedicineRepository _medicineRepository;
 
         public PharmacyController()
         {
             _ownerRepository = new OwnerRepository();
             _pharmacyRepository = new PharmacyRepository();
+            _medicineRepository = new MedicineRepository();
         }
         public void CreatePharmacy()
         {
@@ -189,21 +191,21 @@ namespace Manage.Controllers
             bool result = int.TryParse(ID, out Id);
             if (result)
             {
-            var pharmacy = _pharmacyRepository.Get(p => p.ID == Id);
+                var pharmacy = _pharmacyRepository.Get(p => p.ID == Id);
 
-            if (pharmacy != null)
-            {
-                _pharmacyRepository.Delete(pharmacy);
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Pharmacy with ID:{pharmacy.ID} is deleted");
+                if (pharmacy != null)
+                {
+                    _pharmacyRepository.Delete(pharmacy);
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Pharmacy with ID:{pharmacy.ID} is deleted");
 
 
 
-            }
-            else
-            {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Pharmacy with this ID  doesn't exist");
-                goto ID;
-            }
+                }
+                else
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Pharmacy with this ID  doesn't exist");
+                    goto ID;
+                }
 
             }
             else
@@ -213,66 +215,91 @@ namespace Manage.Controllers
             }
 
         }
-        //public void GetAllPharmaciesByOwner()
-        //{
-            //var pharmacies = _pharmacyRepository.GetAll();
-            //if(pharmacies.Count > 0)
-            //{
-            //    var owners = _ownerRepository.GetAll();
-            //    if(owners.Count > 0)
-            //    {
-            //        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Please enter owner's id to print it pharmacies");
-            //        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Owner's list");
-            //        foreach(var owner in owners)
-            //        {
-            //            ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray,$"ID:{owner.ID},Name:{owner.Name},Surname:{owner.Surname}");
-            //            string id = Console.ReadLine();
-            //            int Id;
-            //            bool result=int.TryParse(id, out Id);
-            //            if (result)
-            //            {
-            //               var ownerr = _ownerRepository.Get(o => o.ID == Id);
-            //                if(ownerr != null)
-            //                {
-            //                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All pharmacies owned by {owner.Name} {owner.Surname}");
-            //                    if(ownerr.Pharmacies.Count > 0)
-            //                    {
-            //                        foreach(var ownerpharmacy in ownerr.Pharmacies) 
-            //                        {
-            //                            ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"Pharamcy's ID:{ownerpharmacy.ID},Name:{ownerpharmacy.Name},Address:{ownerpharmacy.Address},ContactNumber:{ownerpharmacy.ContactNumber}");
-            //                        }
-            //                    }
-            //                    else
-            //                    {
-            //                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, $"There is no pharmacy belonged to owner {ownerr.Name} {ownerr.Surname}");
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner with this id");
-            //                }
-            //            }
-            //            else
-            //            {
-            //                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter number");
-            //                goto ID;
-            //            }
+        public void GetAllPharmaciesByOwner()
+        {
+            var pharmacies = _pharmacyRepository.GetAll();
+            if (pharmacies.Count > 0)
+            {
+                var owners = _ownerRepository.GetAll();
+                if (owners.Count > 0)
+                {
+                ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Please enter owner's id to print it pharmacies");
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Owner's list");
+                    foreach (var owner in owners)
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"ID:{owner.ID},Name:{owner.Name},Surname:{owner.Surname}");
+                        string id = Console.ReadLine();
+                        if (id != null)
+                        {
+                            int Id;
+                            bool result = int.TryParse(id, out Id);
+                            if (result)
+                            {
+                                var ownerr = _ownerRepository.Get(o => o.ID == Id);
+                                if (ownerr != null)
+                                {
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All pharmacies owned by {owner.Name} {owner.Surname}");
+                                    if (owner.Pharmacies.Count > 0)
+                                    {
+                                        foreach (var ownerpharmacy in owner.Pharmacies)
+                                        {
+                                            ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"Pharamcy's ID:{ownerpharmacy.ID},Name:{ownerpharmacy.Name},Address:{ownerpharmacy.Address},ContactNumber:{ownerpharmacy.ContactNumber}");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, $"There is no pharmacy belonged to owner {owner.Name} {owner.Surname}");
+                                    }
+                                }
+                                else
+                                {
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner with this id");
+                                }
+                            }
+                            else
+                            {
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter number");
+                                goto ID;
+                            }
 
 
 
-            //        }
+                        }
+                        else
+                        {
+                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter riht number");
 
-            //    }
-            //else
-            //{
-            //    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner please create it");
-            //}
-            //}
-            //else
-            //{
-            //    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy");
-            //}
-        //}
+                        }
+
+                    }
+                }
+                else
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no owner please create it");
+                }
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy");
+            }
+
+        }
+        public void Sale()
+        {
+            var pharmacies = _pharmacyRepository.GetAll();
+            if (pharmacies.Count > 0)
+            {
+                var medicines = _medicineRepository.GetAll();
+                if(medicines.Count > 0)
+                {
+                    foreach(var medicine in medicines)
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, $"Drug id");
+                    }
+                }
+            }
+        }
+
 
 
 

@@ -15,7 +15,7 @@ namespace Manage.Controllers
         private PharmacyRepository _pharmacyRepository;
         public ApothecaryController()
         {
-            _apothecaryRepository = new ApothecaryRepository(); 
+            _apothecaryRepository = new ApothecaryRepository();
             _pharmacyRepository = new PharmacyRepository();
         }
         public void CreateApothecary()
@@ -23,30 +23,30 @@ namespace Manage.Controllers
             var pharmacies = _pharmacyRepository.GetAll();
             if (pharmacies.Count != 0)
             {
+            PharmacyList: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "All pharmacies");
+                foreach (var pharmacy in pharmacies)
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, pharmacy.Name);
+
+                }
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's name");
                 string name = Console.ReadLine();
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's surname");
                 string surname = Console.ReadLine();
-                Age: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's age");
+            Age: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's age");
                 string age = Console.ReadLine();
                 byte apothecaryAge;
                 bool result = byte.TryParse(age, out apothecaryAge);
                 if (result)
                 {
-                    Experience: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's experience");
+                Experience: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's experience");
                     string experience = Console.ReadLine();
                     byte experiencee;
-                    result=byte.TryParse(experience, out experiencee);
+                    result = byte.TryParse(experience, out experiencee);
                     if (result)
                     {
-                        if (experiencee != 0 && experiencee !> apothecaryAge)
+                        if (experiencee > 0 && experiencee <= apothecaryAge)
                         {
-                            PharmacyList: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "All pharamcies");
-                            foreach (var pharmacy in pharmacies)
-                            {
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, pharmacy.Name);
-
-                            }
                             ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "Enter pharamcy's name");
                             string pharmacyName = Console.ReadLine();
                             var pharmacyname = _pharmacyRepository.Get(p => p.Name.ToLower() == pharmacyName.ToLower());
@@ -79,8 +79,8 @@ namespace Manage.Controllers
                             goto Experience;
                         }
 
-                       
-                       
+
+
                     }
                     else
                     {
@@ -94,7 +94,7 @@ namespace Manage.Controllers
                     ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
                     goto Age;
                 }
-              
+
             }
             else
             {
@@ -103,11 +103,11 @@ namespace Manage.Controllers
         }
     }
 }
-                
 
 
-           
 
 
-               
+
+
+
 

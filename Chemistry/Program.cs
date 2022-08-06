@@ -124,9 +124,9 @@ namespace Manage
                                                 case (int)Options1.GetAll:
                                                     _pharmacyController.GetAll();
                                                     break;
-                                                //case (int)Options1.GetAllPharmaciesbyOwner:
-                                                //    _pharmacyController.GetAllPharmaciesByOwner();
-                                                //    break;
+                                                case (int)Options1.GetAllPharmaciesbyOwner:
+                                                    _pharmacyController.GetAllPharmaciesByOwner();
+                                                    break;
                                                     //case (int)Options1.Sale:
                                                     //    _pharmacyController.Sale();
                                                     //    goto Logout;
