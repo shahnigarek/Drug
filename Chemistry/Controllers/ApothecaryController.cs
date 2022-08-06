@@ -157,6 +157,30 @@ namespace Manage.Controllers
 
             }
         }
+        public void DeleteApothecary()
+        {
+        ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the apothecary you want to delete ");
+            string ID = Console.ReadLine();
+            int Id;
+
+            bool result = int.TryParse(ID, out Id);
+
+            var apothecary = _apothecaryRepository.Get(a => a.ID == Id);
+
+            if (apothecary != null)
+            {
+                _apothecaryRepository.Delete(apothecary);
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Apothecary with ID:{apothecary.ID} is deleted");
+            }
+            else
+
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Apothecary with this ID  doesn't exist");
+                goto ID;
+            }
+
+
+        }
     }
 }
 

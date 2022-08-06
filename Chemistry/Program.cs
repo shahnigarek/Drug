@@ -177,10 +177,9 @@ namespace Manage
                                                 case (int)Options2.UpdateApothecary:
                                                     _apothecaryController.UpdateApothecary();
                                                     break;
-                                                    //case (int)Options2.DeleteApothecary:
-                                                    //    _apothecaryController.DeleteApothecary();
-                                                    //    goto Logout;
-                                                    //    break;
+                                                case (int)Options2.DeleteApothecary:
+                                                    _apothecaryController.DeleteApothecary();
+                                                    break;
                                                     //case (int)Options2.GetAll:
                                                     //    _apothecaryController.GetALL();
                                                     //    goto Logout;
