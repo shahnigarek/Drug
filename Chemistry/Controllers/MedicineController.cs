@@ -118,6 +118,29 @@ namespace Manage.Controllers
             }
 
         }
+        public void UpdateMedicine()
+        {
+
+        }
+        public void GetAll()
+        {
+            var medicines = _medicineRepository.GetAll();
+
+            if (medicines.Count > 0)
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "All medicines list");
+
+                foreach (var medicine in medicines)
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {medicine.ID},Name - {medicine.Name},Price-{medicine.Price},Count-{medicine.Count},Pharmacy-{medicine.Pharmacy.Name},Pharmacy's Id:{medicine.Pharmacy.ID}");
+                }
+
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine,please create it ");
+            }
+        }
     }
 
 }
