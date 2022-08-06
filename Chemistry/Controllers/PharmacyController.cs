@@ -173,7 +173,7 @@ namespace Manage.Controllers
 
                 foreach (var pharmacy in pharmacies)
                 {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {pharmacy.ID},Name - {pharmacy.Name},Adress-{pharmacy.Address},Contactnumber-{pharmacy.ContactNumber},Owner-{pharmacy.Owner.Name},Owner's Id:{pharmacy.Owner.ID},Count:{pharmacy.Medicines.Count}");
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {pharmacy.ID},Name - {pharmacy.Name},Adress-{pharmacy.Address},Contactnumber-{pharmacy.ContactNumber},Owner-{pharmacy.Owner.Name},Owner's Id:{pharmacy.Owner.ID}");
                 }
 
             }
@@ -346,7 +346,9 @@ namespace Manage.Controllers
                                                     {
                                                         medicine.Count -= medicinecount;
                                                         medicine.Count = medicine.Count;
+                                                        _medicineRepository.Update(medicine);
                                                         ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "This medicine sold");
+
                                                     }
                                                     else
                                                     {
