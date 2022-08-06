@@ -47,32 +47,41 @@ namespace Manage.Controllers
                         ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine name:");
                         string name = Console.ReadLine();
 
-                       Price: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine price:");
+                    Price: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine price:");
                         string price = Console.ReadLine();
                         double pricemedicine;
                         result = double.TryParse(price, out pricemedicine);
                         if (result)
                         {
-                           Count: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine count:");
+                        Count: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine count:");
                             string count = Console.ReadLine();
                             int countmedicine;
                             result = int.TryParse(count, out countmedicine);
                             if (result)
                             {
-                                Medicine medicine = new Medicine
+                                if (countmedicine > 0)
                                 {
-                                    Name = name,
-                                    Price = pricemedicine,
-                                    Count = countmedicine,
-                                    Pharmacy = pharmacy,
+                                    Medicine medicine = new Medicine
+                                    {
+                                        Name = name,
+                                        Price = pricemedicine,
+                                        Count = countmedicine,
+                                        Pharmacy = pharmacy,
 
-                                };
-
-
-                                _medicineRepository.Create(medicine);
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{medicine.ID},Name:{medicine.Name},Price:{medicine.Price},Count:{medicine.Count} and pharmacy to which belonged medicine:{medicine.Pharmacy.Name}");
+                                    };
 
 
+                                    _medicineRepository.Create(medicine);
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{medicine.ID},Name:{medicine.Name},Price:{medicine.Price},Count:{medicine.Count} and pharmacy to which belonged medicine:{medicine.Pharmacy.Name}");
+
+
+
+                                }
+                                else
+                                {
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                                    goto Count;
+                                }
 
                             }
                             else
@@ -80,7 +89,6 @@ namespace Manage.Controllers
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
                                 goto Count;
                             }
-
                         }
                         else
                         {
@@ -101,6 +109,7 @@ namespace Manage.Controllers
                     ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter Id in digits");
                     goto ID;
                 }
+
             }
             else
             {
