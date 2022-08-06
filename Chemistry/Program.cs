@@ -259,9 +259,9 @@ namespace Manage
                                             case (int)Options3.GetAllMediciniesByPharmacy:
                                                 _medicineController.GetAllMediciniesByPharmacy();
                                                 break;
-                                            //case (int)Options3.Filter:
-                                            //    _medicineController.Filter();
-                                            //    break;
+                                            case (int)Options3.Filter:
+                                                _medicineController.Filter();
+                                                break;
                                             case (int)Options3.Exit:
                                                 goto Initial;
                                                 break;

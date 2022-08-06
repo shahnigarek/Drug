@@ -316,6 +316,48 @@ namespace Manage.Controllers
             }
            
         }
+        public void Filter()
+        {
+            var medicinies=_medicineRepository.GetAll();
+            if (medicinies.Count > 0)
+            {
+
+               id: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter maximum price of drugs you want:");
+                string price = Console.ReadLine();
+                double maxprice;
+               bool result = double.TryParse(price, out maxprice);
+                if (result)
+                {
+                    medicinies = _medicineRepository.GetAll(m=>m.Price<=maxprice);
+                    if(medicinies.Count>0)
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, $"All medicines costing less or equal to {maxprice}");
+                        foreach (var medicine in medicinies)
+                        {
+                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, $"id: {medicine.ID}, name : {medicine.Name}," +
+                                $" price{medicine.Price}, count : {medicine.Count}");
+                        }
+                    }
+                    else
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "no medicine found costing less than the max price");
+                    }
+
+
+                }
+                else
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "enter right number");
+                    goto id;
+                }
+
+
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine please create it");
+            }
+        }
     }
 
 }
