@@ -196,9 +196,9 @@ namespace Manage
                                             case (int)Options2.GetAll:
                                                 _apothecaryController.GetAll();
                                                 break;
-                                            //case (int)Options2.GetAllApothecaryByPharamcy:
-                                            //    _apothecaryController.GetAllApothecaryByPharmacy();
-                                            //    break;
+                                            case (int)Options2.GetAllApothecaryByPharmacy:
+                                                _apothecaryController.GetAllApothecaryByPharmacy();
+                                                break;
                                             case (int)Options2.Exit:
                                                 goto Initial;
                                                 break;

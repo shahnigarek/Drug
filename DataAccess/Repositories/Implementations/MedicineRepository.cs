@@ -100,9 +100,7 @@ namespace DataAccess.Repositories.Implementations
                     medicine.Price = entity.Price;
                     medicine.Pharmacy = entity.Pharmacy;
                     medicine.Count=entity.Count;    
-
                 }
-
             }
             catch (Exception)
             {
@@ -110,7 +108,5 @@ namespace DataAccess.Repositories.Implementations
                 Console.WriteLine("Something went wrong");
             }
         }
-
-       
     }
 }

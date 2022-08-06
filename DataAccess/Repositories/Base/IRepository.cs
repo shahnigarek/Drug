@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Abstarctions;
+
 
 namespace DataAccess.Repositories.Base
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> where T : IEntity
     {
         T Create(T entity);
         void Update(T entity);

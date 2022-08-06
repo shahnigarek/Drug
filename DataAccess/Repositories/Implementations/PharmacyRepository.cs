@@ -100,6 +100,7 @@ namespace DataAccess.Repositories.Implementations
                     pharmacy.Address = entity.Address;
                     pharmacy.ContactNumber = entity.ContactNumber;
                     pharmacy.Owner = entity.Owner;
+                    pharmacy.Apothecaries = entity.Apothecaries;
 
 
 
