@@ -180,10 +180,9 @@ namespace Manage
                                                 case (int)Options2.DeleteApothecary:
                                                     _apothecaryController.DeleteApothecary();
                                                     break;
-                                                    //case (int)Options2.GetAll:
-                                                    //    _apothecaryController.GetALL();
-                                                    //    goto Logout;
-                                                    //    break;
+                                                case (int)Options2.GetAll:
+                                                    _apothecaryController.GetAll();
+                                                    break;
                                                     //case (int)Options2.GetAllDruggistByDrugstore:
                                                     //    _apothecaryController.GetAllApothecaryByPharmacy();
                                                     //    goto Logout;

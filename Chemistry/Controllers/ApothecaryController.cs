@@ -103,6 +103,7 @@ namespace Manage.Controllers
         }
         public void UpdateApothecary()
         {
+            GetAll();
         ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter apothecary's ID");
             string ID = Console.ReadLine();
             int Id;
@@ -159,6 +160,7 @@ namespace Manage.Controllers
         }
         public void DeleteApothecary()
         {
+            GetAll();   
         ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the apothecary you want to delete ");
             string ID = Console.ReadLine();
             int Id;
@@ -180,6 +182,24 @@ namespace Manage.Controllers
             }
 
 
+        }
+        public void GetAll()
+        {
+            var apothecaries = _apothecaryRepository.GetAll();
+
+            if (apothecaries.Count > 0)
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "All apothecary's list");
+
+                foreach (var apothecary in apothecaries)
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {apothecary.ID}, Fullname - {apothecary.Name} {apothecary.Surname},Age :{apothecary.Age},Experience:{apothecary.Experience}");
+                }
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no apothecary,please create it ");
+            }
         }
     }
 }
