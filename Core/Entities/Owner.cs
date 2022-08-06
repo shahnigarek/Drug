@@ -13,5 +13,10 @@ namespace Core.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
         public List<Pharmacy> Pharmacies { get; set; }
+        public Owner()
+        {
+            Pharmacies = new List<Pharmacy>();
+
+        }
     }
 }

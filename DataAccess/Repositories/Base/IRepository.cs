@@ -8,7 +8,7 @@ namespace DataAccess.Repositories.Base
 {
     public interface IRepository<T> where T : class
     {
-        void Create(T entity);
+        T Create(T entity);
         void Update(T entity);
         void Delete(T entity);
 

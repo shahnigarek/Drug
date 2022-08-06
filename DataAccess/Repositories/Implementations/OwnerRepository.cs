@@ -108,10 +108,7 @@ namespace DataAccess.Repositories.Implementations
                 Console.WriteLine("Something went wrong");
             }
         }
-        void IRepository<Owner>.Create(Owner entity)
-        {
-            throw new NotImplementedException();
-        }
+      
 
     }
 }

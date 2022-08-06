@@ -111,9 +111,6 @@ namespace DataAccess.Repositories.Implementations
             }
         }
 
-        void IRepository<Medicine>.Create(Medicine entity)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

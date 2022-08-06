@@ -117,9 +117,6 @@ namespace DataAccess.Repositories.Implementations
         }
     
 
-        void IRepository<Apothecary>.Create(Apothecary entity)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

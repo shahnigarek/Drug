@@ -91,12 +91,15 @@ namespace DataAccess.Repositories.Implementations
 
             try
             {
-                var pharmacy = Dbcontexts.Medicines.Find(a => a.ID == entity.ID);
+                var pharmacy = Dbcontexts.Pharmacies.Find(a => a.ID == entity.ID);
                 if (pharmacy != null)
                 {
 
                     pharmacy.ID = entity.ID;
                     pharmacy.Name = entity.Name;
+                    pharmacy.Address = entity.Address;
+                    pharmacy.ContactNumber = entity.ContactNumber;
+                    pharmacy.Owner = entity.Owner;
 
 
 
@@ -110,10 +113,7 @@ namespace DataAccess.Repositories.Implementations
             }
 
         }
-        void IRepository<Pharmacy>.Create(Pharmacy entity)
-        {
-            throw new NotImplementedException();
-        }
+     
 
     }
 }

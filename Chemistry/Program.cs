@@ -118,18 +118,15 @@ namespace Manage
                                                 case (int)Options1.UpdatePharmacy:
                                                     _pharmacyController.UpdatePharmacy();
                                                     break;
-                                                    //case (int)Options1.DeletePharmacy:
-                                                    //    _pharmacyController.DeletePharmacy();
-                                                    //    goto Logout;
-                                                    //    break;
-                                                    //case (int)Options1.GetAll:
-                                                    //    _pharmacyController.GetAll();
-                                                    //    goto Logout;
-                                                    //    break;
-                                                    //case (int)Options1.GetAllPharmaciesbyOwner:
-                                                    //    _pharmacyController.GetAllPharmaciesbyOwner();
-                                                    //    goto Logout;
-                                                    //    break;
+                                                case (int)Options1.DeletePharmacy:
+                                                    _pharmacyController.DeletePharmacy();
+                                                    break;
+                                                case (int)Options1.GetAll:
+                                                    _pharmacyController.GetAll();
+                                                    break;
+                                                //case (int)Options1.GetAllPharmaciesbyOwner:
+                                                //    _pharmacyController.GetAllPharmaciesByOwner();
+                                                //    break;
                                                     //case (int)Options1.Sale:
                                                     //    _pharmacyController.Sale();
                                                     //    goto Logout;
@@ -173,27 +170,26 @@ namespace Manage
                                             switch (selected)
                                             {
 
-                                                //case (int)Options2.CreateApothecary:
-                                                //    _apothecaryController.CreateApothecary();
-                                                //    goto Logout;
-                                                //    break;
+                                                case (int)Options2.CreateApothecary:
+                                                    _apothecaryController.CreateApothecary();
+                                                    break;
 
-                                                //case (int)Options2.UpdateApothecary:
-                                                //    _apothecaryController.UpdateApothecary();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options2.DeleteApothecary:
-                                                //    _apothecaryController.DeleteApothecary();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options2.GetAll:
-                                                //    _apothecaryController.GetALL();
-                                                //    goto Logout;
-                                                //    break;
-                                                //case (int)Options2.GetAllDruggistByDrugstore:
-                                                //    _apothecaryController.GetAllApothecaryByPharmacy();
-                                                //    goto Logout;
-                                                //    break;
+                                                    //case (int)Options2.UpdateApothecary:
+                                                    //    _apothecaryController.UpdateApothecary();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options2.DeleteApothecary:
+                                                    //    _apothecaryController.DeleteApothecary();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options2.GetAll:
+                                                    //    _apothecaryController.GetALL();
+                                                    //    goto Logout;
+                                                    //    break;
+                                                    //case (int)Options2.GetAllDruggistByDrugstore:
+                                                    //    _apothecaryController.GetAllApothecaryByPharmacy();
+                                                    //    goto Logout;
+                                                    //    break;
                                             }
                                         }
                                         else

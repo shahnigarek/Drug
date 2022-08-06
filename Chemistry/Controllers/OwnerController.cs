@@ -20,7 +20,7 @@ namespace Manage.Controllers
      
         public void CreateOwner()
         {
-            ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's name:");
+           ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's name:");
             string name = Console.ReadLine();
             ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter owner's surname");
             string surname = Console.ReadLine();
@@ -80,7 +80,7 @@ namespace Manage.Controllers
         public void DeleteOwner()
         {
             GetAll();
-            ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the owner you want to delete ");
+           ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Enter the ID of the owner you want to delete ");
             string ID = Console.ReadLine();
             int Id;
 
@@ -91,7 +91,7 @@ namespace Manage.Controllers
             if (owner != null)
             {
                 _ownerRepository.Delete(owner);
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Teacher with ID:{owner.ID} is deleted");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Owner with ID:{owner.ID} is deleted");
 
 
 
@@ -99,6 +99,7 @@ namespace Manage.Controllers
             else
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Owner with this ID  doesn't exist");
+                goto ID;
             }
         }
         public void GetAll()
