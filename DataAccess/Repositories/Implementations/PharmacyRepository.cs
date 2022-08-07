@@ -68,14 +68,15 @@ namespace DataAccess.Repositories.Implementations
         {
             try
             {
-                if (filter == null)
+                if (filter != null)
                 {
-                    return Dbcontexts.Pharmacies;
 
+                    return Dbcontexts.Pharmacies.FindAll(filter);
                 }
                 else
                 {
-                    return Dbcontexts.Pharmacies.FindAll(filter);
+                    return Dbcontexts.Pharmacies;
+                    
                 }
 
             }
@@ -101,11 +102,8 @@ namespace DataAccess.Repositories.Implementations
                     pharmacy.ContactNumber = entity.ContactNumber;
                     pharmacy.Owner = entity.Owner;
                     pharmacy.Apothecaries = entity.Apothecaries;
-
-
-
+                    pharmacy.Medicines=entity.Medicines;
                 }
-
             }
             catch (Exception)
             {
@@ -114,10 +112,14 @@ namespace DataAccess.Repositories.Implementations
             }
 
         }
-     
-
     }
 }
+
+     
+
+
+
+
 
 
 

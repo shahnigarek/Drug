@@ -66,10 +66,9 @@ namespace Manage.Controllers
 
                         };
 
-
                         _pharmacyRepository.Create(pharmacy);
                         owner.Pharmacies.Add(pharmacy);
-                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{pharmacy.ID},Name;{pharmacy.Name},Address:{pharmacy.Address},Contactnumber:{pharmacy.ContactNumber} and phramcy's owner:{owner.Name}");
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{pharmacy.ID},Name;{pharmacy.Name},Address:{pharmacy.Address},Contactnumber:{pharmacy.ContactNumber} and pharmacy's owner:{owner.Name}");
 
 
 
@@ -114,6 +113,12 @@ namespace Manage.Controllers
                     string newaddress = Console.ReadLine();
                     ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new pharmacy contactnumber:");
                     string newcontactnumber = Console.ReadLine();
+                    var owners = _ownerRepository.GetAll();
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Magenta, "All owner's list");
+                    foreach (var owner in owners)
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, $"Id - {owner.ID}, Fullname - {owner.Name} {owner.Surname}");
+                    }
                 Owner: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new owner's id");
                     string newowner = Console.ReadLine();
                     int ownerid;
@@ -133,7 +138,7 @@ namespace Manage.Controllers
 
                             };
                             _pharmacyRepository.Update(newpharmacy);
-                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {newpharmacy.ID},Name - {newname},Adress-{newaddress},Contactnumber-{newcontactnumber}");
+                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {ID},Name - {newname},Adress-{newaddress},Contactnumber-{newcontactnumber},Owner's ID:{ownerid}");
 
                         }
                         else
@@ -173,7 +178,8 @@ namespace Manage.Controllers
 
                 foreach (var pharmacy in pharmacies)
                 {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {pharmacy.ID},Name - {pharmacy.Name},Adress-{pharmacy.Address},Contactnumber-{pharmacy.ContactNumber},Owner-{pharmacy.Owner.Name},Owner's Id:{pharmacy.Owner.ID}");
+                    var owner = pharmacy.Owner != null ? pharmacy.Owner.Name : null;
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Id - {pharmacy.ID},Name - {pharmacy.Name},Adress-{pharmacy.Address},Contactnumber-{pharmacy.ContactNumber},Owner-{owner}");
                 }
 
             }
@@ -229,6 +235,7 @@ namespace Manage.Controllers
                     foreach (var owner in owners)
                     {
                         ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"ID:{owner.ID},Name:{owner.Name},Surname:{owner.Surname}");
+                    }
                         string id = Console.ReadLine();
                         if (id != null)
                         {
@@ -239,17 +246,18 @@ namespace Manage.Controllers
                                 var ownerr = _ownerRepository.Get(o => o.ID == Id);
                                 if (ownerr != null)
                                 {
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All pharmacies owned by {owner.Name} {owner.Surname}");
-                                    if (owner.Pharmacies.Count > 0)
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"All pharmacies owned by {ownerr.Name} {ownerr.Surname}");
+                                    if (ownerr.Pharmacies.Count > 0)
                                     {
-                                        foreach (var ownerpharmacy in owner.Pharmacies)
+                                        var pharm = _pharmacyRepository.GetAll(p => p.Owner.ID == ownerr.ID);
+                                        foreach (var ownerpharmacy in pharm)
                                         {
                                             ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkGray, $"Pharamcy's ID:{ownerpharmacy.ID},Name:{ownerpharmacy.Name},Address:{ownerpharmacy.Address},ContactNumber:{ownerpharmacy.ContactNumber}");
                                         }
                                     }
                                     else
                                     {
-                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, $"There is no pharmacy belonged to owner {owner.Name} {owner.Surname}");
+                                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, $"There is no pharmacy belonged to owner {ownerr.Name} {ownerr.Surname}");
                                     }
                                 }
                                 else
@@ -272,7 +280,7 @@ namespace Manage.Controllers
 
                         }
 
-                    }
+                    
                 }
                 else
                 {
@@ -292,10 +300,10 @@ namespace Manage.Controllers
             if (pharmacies.Count > 0)
             {
             id: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, "Please choose one of the pharmacy by id");
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, "Pharmacy List");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Pharmacy List");
                 foreach (var pharmacy in pharmacies)
                 {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkBlue, $"Pharmacy's ID:{pharmacy.ID},Name:{pharmacy.Name},Address:{pharmacy.Address},ContactNumber:{pharmacy.ContactNumber},Owner:{pharmacy.Owner.Name}");
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, $"Pharmacy's ID:{pharmacy.ID},Name:{pharmacy.Name},Address:{pharmacy.Address},ContactNumber:{pharmacy.ContactNumber},Owner:{pharmacy.Owner.Name}");
                 }
                 string id = Console.ReadLine();
                 int choosenId;
@@ -353,7 +361,7 @@ namespace Manage.Controllers
                                                     else
                                                     {
                                                         ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "You have not provided exact money to buy the medicine ");
-                                                        
+
                                                     }
 
                                                 }
@@ -403,7 +411,7 @@ namespace Manage.Controllers
                 }
                 else
                 {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "please enter id in correct digit");
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter id in correct digit");
                     goto id;
                 }
 

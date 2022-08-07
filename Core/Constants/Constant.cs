@@ -8,43 +8,43 @@ namespace Core.Constants
 {
     public enum  Options
     {
-        CreateOwner=1,
+        Exit,
+        CreateOwner,
         UpdateOwner,
         DeleteOwner,
         GetAll,
-        Exit
 
     }
     public enum Options1
     {
-        CreatePharmacy=1,
+        Exit,
+        CreatePharmacy,
         UpdatePharmacy,
         DeletePharmacy,
         GetAll,
         GetAllPharmaciesbyOwner,
         Sale,
-        Exit
     }
     public enum Options2
     {
-        CreateApothecary=1,
+        Exit,
+        CreateApothecary,
         UpdateApothecary,
         DeleteApothecary,
         GetAll,
         GetAllApothecaryByPharmacy,
-        Exit
        
 
     }
     public enum Options3
     {
-        CreateMedicine=1,
+        Exit,
+        CreateMedicine,
         UpdateMedicine,
         DeleteMedicine,
         GetAll,
         GetAllMediciniesByPharmacy,
         Filter,
-        Exit
 
     }
 }

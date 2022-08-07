@@ -98,8 +98,8 @@ namespace DataAccess.Repositories.Implementations
                     medicine.ID = entity.ID;
                     medicine.Name = entity.Name;
                     medicine.Price = entity.Price;
-                    medicine.Pharmacy = entity.Pharmacy;
                     medicine.Count=entity.Count;    
+                    medicine.Pharmacy = entity.Pharmacy;
                 }
             }
             catch (Exception)

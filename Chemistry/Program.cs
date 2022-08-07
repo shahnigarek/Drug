@@ -28,7 +28,7 @@ namespace Manage
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Welcome , {admin.UserName}");
                 Console.WriteLine();
-                Initial: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Select one of the options");
+            Initial: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Select one of the options");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "1-Owner");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "2-Pharmacy");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "3-Apothecary");
@@ -51,13 +51,13 @@ namespace Manage
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "2-Update Owner");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "3-Delete Owner");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "4-Get All");
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "5-Exit");
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "0-Exit");
                                 string number1 = Console.ReadLine();
                                 int selected;
                                 bool result = int.TryParse(number1, out selected);
                                 if (result)
                                 {
-                                    if (selected > 0 && selected < 7)
+                                    if (selected >= 0 && selected < 5)
                                     {
                                         switch (selected)
                                         {
@@ -79,7 +79,6 @@ namespace Manage
                                             case (int)Options.Exit:
                                                 goto Initial;
                                                 break;
-
                                         }
 
                                     }
@@ -90,11 +89,11 @@ namespace Manage
                                 }
                                 else
                                 {
-
                                     goto Logout;
                                 }
                             }
                         }
+
                         else if (number == "2")
                         {
 
@@ -108,14 +107,14 @@ namespace Manage
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "4-GetAll");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "5-Get All Pharmacies by Owner");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "6-Sale");
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "7-Exit");
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "0-Exit");
 
                                 string number1 = Console.ReadLine();
                                 int selectedOption;
                                 bool result = int.TryParse(number1, out selectedOption);
                                 if (result)
                                 {
-                                    if (selectedOption > 0 && selectedOption <= 7)
+                                    if (selectedOption >= 0 && selectedOption < 7)
                                     {
 
                                         switch (selectedOption)
@@ -141,7 +140,7 @@ namespace Manage
                                                 break;
                                             case (int)Options1.Exit:
                                                 goto Initial;
-                                                    break;
+                                                break;
 
 
                                         }
@@ -171,14 +170,14 @@ namespace Manage
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "3-Delete Apothecary");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "4-GetAll");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "5-Get All Apothecary By Pharmacy");
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "6-Exit");
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "0-Exit");
 
                                 string number1 = Console.ReadLine();
                                 int selected;
                                 bool result = int.TryParse(number1, out selected);
                                 if (result)
                                 {
-                                    if (selected > 0 && selected <= 6)
+                                    if (selected >= 0 && selected < 6)
                                     {
                                         switch (selected)
                                         {
@@ -231,7 +230,7 @@ namespace Manage
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "4-GetAll");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "5-Get All Medicines By Pharmacy");
                                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "6-Filter");
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "7-Exit");
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "0-Exit");
 
 
                                 string number1 = Console.ReadLine();
@@ -239,7 +238,7 @@ namespace Manage
                                 bool result = int.TryParse(number1, out selected);
                                 if (result)
                                 {
-                                    if (selected > 0 && selected <= 7)
+                                    if (selected >= 0 && selected < 7)
                                     {
                                         switch (selected)
                                         {
@@ -280,28 +279,28 @@ namespace Manage
                                     goto Logout;
                                 }
 
-
                             }
-
-
-
                         }
                     }
-
-
-
                 }
+
             }
             else
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Password or username were entered false,please try again");
                 goto Logout;
             }
-
         }
-
     }
 }
+
+
+
+
+
+
+
+
 
 
 

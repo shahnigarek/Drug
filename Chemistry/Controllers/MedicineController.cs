@@ -18,106 +18,6 @@ namespace Manage.Controllers
             _medicineRepository = new MedicineRepository();
             _pharmacyRepository = new PharmacyRepository();
         }
-        public void CreateMedicine()
-        {
-            var pharmacies = _pharmacyRepository.GetAll();
-            if (pharmacies.Count > 0)
-            {
-
-
-            AllPharmaciesList: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "All pharmacies");
-
-                foreach (var pharmacy in pharmacies)
-                {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, $" ID: {pharmacy.ID},Name:{pharmacy.Name}");
-
-
-                }
-
-            ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "Please choose  pharmacy by  id");
-                string pharmacyid = Console.ReadLine();
-                int id;
-                bool result = int.TryParse(pharmacyid, out id);
-                if (result)
-                {
-                    var pharmacy = _pharmacyRepository.Get(p => p.ID == id);
-                    if (pharmacy != null)
-                    {
-
-                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine name:");
-                        string name = Console.ReadLine();
-
-                    Price: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine price:");
-                        string price = Console.ReadLine();
-                        double pricemedicine;
-                        result = double.TryParse(price, out pricemedicine);
-                        if (result)
-                        {
-                        Count: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine count:");
-                            string count = Console.ReadLine();
-                            int countmedicine;
-                            result = int.TryParse(count, out countmedicine);
-                            if (result)
-                            {
-                                if (countmedicine > 0)
-                                {
-                                    Medicine medicine = new Medicine
-                                    {
-                                        Name = name,
-                                        Price = pricemedicine,
-                                        Count = countmedicine,
-                                        Pharmacy = pharmacy,
-
-                                    };
-
-
-                                    _medicineRepository.Create(medicine);
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{medicine.ID},Name:{medicine.Name},Price:{medicine.Price},Count:{medicine.Count} and pharmacy to which belonged medicine:{medicine.Pharmacy.Name}");
-
-
-
-                                }
-                                else
-                                {
-                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
-                                    goto Count;
-                                }
-
-                            }
-                            else
-                            {
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
-                                goto Count;
-                            }
-                        }
-                        else
-                        {
-                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
-                            goto Price;
-                        }
-                    }
-                    else
-                    {
-                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Including pharmacy doesn't exist");
-                        goto AllPharmaciesList;
-
-                    }
-
-                }
-                else
-                {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter Id in digits");
-                    goto ID;
-                }
-
-            }
-            else
-            {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please create pharmacy before inputing info about medicine");
-
-            }
-
-        }
         public void UpdateMedicine()
         {
             GetAll();
@@ -147,6 +47,13 @@ namespace Manage.Controllers
                         {
                             if (countmedicine > 0)
                             {
+                                var pharmacies = _pharmacyRepository.GetAll();
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Magenta, "All pharmacies list");
+                                foreach(var pharmacy in pharmacies)
+                                {
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, $"Id - {pharmacy.ID},Name - {pharmacy.Name},Adress-{pharmacy.Address},Contactnumber-{pharmacy.ContactNumber},Owner-{pharmacy.Owner.Name},Owner's Id:{pharmacy.Owner.ID}");
+                                }
+
                             Pharmacy: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter new pharmacy's id");
                                 string newpharmacy = Console.ReadLine();
                                 int pharmacyid;
@@ -204,7 +111,7 @@ namespace Manage.Controllers
                 }
                 else
                 {
-                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine please create it");
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine.Please create it");
                 }
 
             }
@@ -220,7 +127,7 @@ namespace Manage.Controllers
 
             if (medicines.Count > 0)
             {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "All medicines list");
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, "All medicine's list");
 
                 foreach (var medicine in medicines)
                 {
@@ -314,22 +221,22 @@ namespace Manage.Controllers
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no pharmacy please create it");
             }
-           
+
         }
         public void Filter()
         {
-            var medicinies=_medicineRepository.GetAll();
+            var medicinies = _medicineRepository.GetAll();
             if (medicinies.Count > 0)
             {
 
-               id: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter maximum price of drugs you want:");
+            id: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter maximum price of drugs you want:");
                 string price = Console.ReadLine();
                 double maxprice;
-               bool result = double.TryParse(price, out maxprice);
+                bool result = double.TryParse(price, out maxprice);
                 if (result)
                 {
-                    medicinies = _medicineRepository.GetAll(m=>m.Price<=maxprice);
-                    if(medicinies.Count>0)
+                    medicinies = _medicineRepository.GetAll(m => m.Price <= maxprice);
+                    if (medicinies.Count > 0)
                     {
                         ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, $"All medicines costing less or equal to {maxprice}");
                         foreach (var medicine in medicinies)
@@ -358,6 +265,106 @@ namespace Manage.Controllers
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "There is no medicine please create it");
             }
         }
+        public void CreateMedicine()
+        {
+            var pharmacies = _pharmacyRepository.GetAll();
+            if (pharmacies.Count > 0)
+            {
+
+
+            AllPharmaciesList: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "All pharmacies");
+
+                foreach (var pharmacy in pharmacies)
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, $" ID: {pharmacy.ID},Name:{pharmacy.Name}");
+
+
+                }
+
+            ID: ConsoleHelper.WriteTextWithColor(ConsoleColor.DarkMagenta, "Please choose  pharmacy by its id");
+                string pharmacyid = Console.ReadLine();
+                int id;
+                bool result = int.TryParse(pharmacyid, out id);
+                if (result)
+                {
+                    var pharmacy = _pharmacyRepository.Get(p => p.ID == id);
+                    if (pharmacy != null)
+                    {
+
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine name:");
+                        string name = Console.ReadLine();
+
+                    Price: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine price:");
+                        string price = Console.ReadLine();
+                        double pricemedicine;
+                        result = double.TryParse(price, out pricemedicine);
+                        if (result)
+                        {
+                        Count: ConsoleHelper.WriteTextWithColor(ConsoleColor.Cyan, "Enter medicine count:");
+                            string count = Console.ReadLine();
+                            int countmedicine;
+                            result = int.TryParse(count, out countmedicine);
+                            if (result)
+                            {
+                                if (countmedicine > 0)
+                                {
+                                    Medicine medicine = new Medicine
+                                    {
+                                        Name = name,
+                                        Price = pricemedicine,
+                                        Count = countmedicine,
+                                        Pharmacy = pharmacy,
+
+                                    };
+
+                                    pharmacy.Medicines.Add(medicine);
+                                    _medicineRepository.Create(medicine);
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"ID:{medicine.ID},Name:{medicine.Name},Price:{medicine.Price},Count:{medicine.Count} and pharmacy to which belonges medicine:{medicine.Pharmacy.Name}");
+                                }
+                                else
+                                {
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                                    goto Count;
+                                }
+
+                            }
+                            else
+                            {
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                                goto Count;
+                            }
+                        }
+                        else
+                        {
+                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter right number");
+                            goto Price;
+                        }
+                    }
+                    else
+                    {
+                        ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Including pharmacy doesn't exist");
+                        goto AllPharmaciesList;
+
+                    }
+
+                }
+                else
+                {
+                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter Id in digits");
+                    goto ID;
+                }
+
+            }
+            else
+            {
+                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please create pharmacy before inputing info about medicine");
+
+            }
+        }
+
+
+
+
     }
 
 }

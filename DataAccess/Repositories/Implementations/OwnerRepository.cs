@@ -96,10 +96,10 @@ namespace DataAccess.Repositories.Implementations
                 if (owner != null)
                 {
                     owner.ID = entity.ID;
-                    owner.Surname = entity.Surname;
                     owner.Name = entity.Name;
+                    owner.Surname = entity.Surname;
+                    owner.Pharmacies = entity.Pharmacies;
                 }
-
             }
 
             catch (Exception)
@@ -108,8 +108,9 @@ namespace DataAccess.Repositories.Implementations
                 Console.WriteLine("Something went wrong");
             }
         }
-      
-
     }
 }
+
+      
+
                     

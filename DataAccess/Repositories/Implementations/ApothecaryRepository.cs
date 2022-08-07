@@ -100,8 +100,8 @@ namespace DataAccess.Repositories.Implementations
                 {
 
                     apothecary.ID = entity.ID;
-                    apothecary.Surname = entity.Surname;
                     apothecary.Name = entity.Name;
+                    apothecary.Surname = entity.Surname;
                     apothecary.Age = entity.Age;
                     apothecary.Experience = entity.Experience;
                     apothecary.Pharmacy = entity.Pharmacy;
