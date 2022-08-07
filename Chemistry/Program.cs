@@ -21,12 +21,12 @@ namespace Manage
             PharmacyRepository _pharmacyRepository = new PharmacyRepository();
 
 
-        Logout: var admin = _adminController.Autenticate();
+         var admin = _adminController.Autenticate();
 
 
             if (admin != null)
             {
-                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Welcome , {admin.UserName}");
+                Logout: ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Welcome , {admin.UserName}");
                 Console.WriteLine();
             Initial: ConsoleHelper.WriteTextWithColor(ConsoleColor.Yellow, "Select one of the options");
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Blue, "1-Owner");
@@ -273,13 +273,14 @@ namespace Manage
                                         ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please enter correct number!!");
                                     }
                                 }
-                                else
-                                {
-
-                                    goto Logout;
-                                }
+                               
 
                             }
+                        }
+                        else if (number == "5")
+                        {
+
+                            _adminController.Logout();
                         }
                     }
                 }
@@ -288,7 +289,7 @@ namespace Manage
             else
             {
                 ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Password or username were entered false,please try again");
-                goto Logout;
+               
             }
         }
     }
