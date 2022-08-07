@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\ROG\\Source\\Repos\\Drug\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\Core.csproj": {
+    "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\obj\\",
+        "outputPath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ROG\\Source\\Repos\\Drug\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ROG\\Source\\Repos\\Drug\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\Core.csproj"
+              "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\Core.csproj"
               }
             }
           }

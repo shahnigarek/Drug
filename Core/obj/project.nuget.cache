@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3VaETGvjCkwPkgTNps6iOSJ3XLFuzxeQPgDcBityu+BYKwEQZ1Sj4hcFmC+NvVsy/5mayfZf+na3ELWef4qPMA==",
+  "dgSpecHash": "6lFkl/eWRifActHJDXVwGpctk0E7A54eQb9vSQLG6urjzRlPFCqqicrI+kOwNOc5FcWlNkXdUM47qChy/wa7Hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\Core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

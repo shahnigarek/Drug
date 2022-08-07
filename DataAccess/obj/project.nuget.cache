@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lU6cphlk+dJ32goofDSq820ridYN2aHQiBKRj0/VlyvxcpKZq+prUO9aGp5xTAPhNyljly9n4Zs+iwGR5tA2vg==",
+  "dgSpecHash": "k/dauTbxAC8wnbzl6ZwrWDvUaOTmETKyHToTDqMABUWHI7TwdtaDM1BGOZf5dlen9y+a4MHytxnv2YEtqrT/Hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ROG\\OneDrive\\Рабочий стол\\Drug\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\ROG\\Source\\Repos\\Drug\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

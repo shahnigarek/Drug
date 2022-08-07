@@ -153,28 +153,33 @@ namespace Manage.Controllers
                         result = byte.TryParse(experience, out newexperience);
                         if (result)
                         {
-                            if (newexperience > 0 && newexperience < newage && newexperience < 18)
+                            if (newexperience > 0 && newexperience < newage  )
+
                             {
-                                var newapothecary = new Apothecary
+                                if(newexperience <= 18)
                                 {
-                                    ID = apothecary.ID,
-                                    Name = newname,
-                                    Surname = newsurname,
-                                    Age = newage,
-                                    Experience = newexperience
+                                    var newapothecary = new Apothecary
+                                    {
+                                        ID = apothecary.ID,
+                                        Name = newname,
+                                        Surname = newsurname,
+                                        Age = newage,
+                                        Experience = newexperience
 
-                                };
-                                _apothecaryRepository.Update(newapothecary);
-                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Name,Surname,Age,Experience  is successufully updated to Name: {newapothecary.Name} Surname: {newapothecary.Surname} Age:{apothecary.Age} Experience :{apothecary.Experience} ");
+                                    };
+                                    _apothecaryRepository.Update(newapothecary);
+                                    ConsoleHelper.WriteTextWithColor(ConsoleColor.Green, $"Name,Surname,Age,Experience  is successufully updated to Name: {newapothecary.Name} Surname: {newapothecary.Surname} Age:{apothecary.Age} Experience :{apothecary.Experience} ");
 
+                                }
+                            }
+                            else
+                            {
+                                ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please, enter correct ID of apothecary");
+                                goto ID;
                             }
                         }
-                        else
-                        {
-                            ConsoleHelper.WriteTextWithColor(ConsoleColor.Red, "Please, enter correct ID of apothecary");
-                            goto ID;
-                        }
                     }
+                               
                 }
 
             }
